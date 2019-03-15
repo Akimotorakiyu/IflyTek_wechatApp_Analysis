@@ -1,0 +1,18 @@
+<view catchtouchmove="preventD" style="position:fixed;top:0;left:0;bottom:0;" wx:if="{{cropperOpened&&url}}">
+    <view catchtouchmove="preventD" class="container">
+        <canvas canvasId="imgcrop" class="imgcrop" style="width:{{width*2}}px;height:{{height*2}}px;"></canvas>
+    </view>
+    <view catchtouchend="touchendCallback" catchtouchmove="touchmoveCallback" catchtouchstart="touchstartCallback" class="mask">
+        <view class="cover-view" style="height:{{height}}px;width:{{width}}px;top:{{contentTop}}rpx;left:{{(deviceWidth-width)/2}}px"></view>
+        <view class="top" style="height:{{contentTop}}rpx;"></view>
+        <view class="left" style="top:{{contentTop}}rpx;height:{{height}}px;width:{{(deviceWidth-width)/2}}px;"></view>
+        <view class="right" style="top:{{contentTop}}rpx;height:{{height}}px;width:{{(deviceWidth-width)/2}}px;"></view>
+        <view class="bottom" style="top:{{width+contentTop*deviceWidth/750}}px"></view>
+    </view>
+    <view class="img" style="width:{{width}}px; height:{{height}}px;display:none;"></view>
+    <image class="image-origin" src="{{originImg.url}}" style="transform: translate({{stv.offsetX}}px, {{stv.offsetY}}px) scale({{stv.scale}}) rotate({{stv.rotate}}deg);width:{{originImg.width}}px; height: {{originImg.height}}px"></image>
+    <view class="footer">
+        <view bindtap="cancel">取消</view>
+        <view bindtap="cropperImg">确定</view>
+    </view>
+</view>

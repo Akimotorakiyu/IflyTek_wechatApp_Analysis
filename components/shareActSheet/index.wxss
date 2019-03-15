@@ -1,0 +1,93 @@
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 9000;
+    color: #fff;
+}
+
+.btn-wp-db {
+    float: left;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.btn-wp-db .btn {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+.btn-wp-db+.btn-wp-db::after {
+    position: absolute;
+    content: ' ';
+    width: 1px;
+    background: #ccc;
+    height: 120rpx;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn ._btn-icon {
+    height: 100rpx;
+    width: 100rpx;
+}
+
+.btn ._btn-text {
+    width: 100%;
+    display: block;
+    margin-top: 40rpx;
+    border: none;
+    font-size: 30rpx;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 30rpx;
+}
+
+.btn::after {
+    border: 0!important;
+    box-shadow: 0;
+    outline: none;
+    font-size: 24rpx;
+}
+
+.actionsheet-dialog {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background: #fff;
+    text-align: center;
+}
+
+.actionsheet-cancel {
+    height: 96rpx;
+    font-size: 36rpx;
+    color: #666;
+    background: #fff;
+    margin-top: 12rpx;
+    line-height: 96rpx;
+}
+
+.actionsheet-share-menus {
+    background: #fff;
+    overflow: hidden;
+    padding: 66rpx 0;
+}
+
+.actionsheet-share-menus::after {
+    content: '';
+    clear: both;
+}

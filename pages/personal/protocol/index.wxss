@@ -1,0 +1,43 @@
+.guide-content {
+    padding: 60rpx 30rpx 50rpx;
+    box-sizing: border-box;
+}
+
+.guide-content .guide-title {
+    margin-bottom: 34rpx;
+}
+
+.guide-info-wrapper {
+    color: #333;
+    font-size: 30rpx;
+    box-sizing: border-box;
+    text-align: justify;
+    margin-top: 60rpx;
+}
+
+.guide-info-santence {
+    opacity: 0.7;
+    line-height: 1.5em;
+}
+
+.guide-paragraph-title {
+    margin: 32rpx 0 20rpx;
+    font-size: 36rpx;
+    opacity: .8;
+}
+
+.guide-update-tip {
+    font-size: 28rpx;
+    color: #666;
+    opacity: 0.6;
+    height: 30rpx;
+    text-align: right;
+}
+
+.text-indent {
+    text-indent: 2em;
+}
+
+.text-indent-1 {
+    text-indent: 1em;
+}

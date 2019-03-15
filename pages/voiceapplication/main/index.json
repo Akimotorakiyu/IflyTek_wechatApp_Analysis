@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "component-credentials-modal": "../../../../components/credentialsModal/index"
+    }
+}

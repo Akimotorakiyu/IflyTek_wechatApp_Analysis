@@ -1,0 +1,82 @@
+<view>
+    <view class="header-bar-container  {{topBarFixed?'top-fixed':''}}">
+        <view class="history-count">共{{voiceCount}}个声音</view>
+        <view class="history-options">
+            <view bindtap="clickEdit" class="item-btn-text hide{{isEdit?'':'show '}} {{reNameId&&'hide'}}">编辑</view>
+            <view bindtap="clickFinish" class="item-btn-text hide{{isEdit?'show':''}}">完成</view>
+        </view>
+    </view>
+    <view class="voice-item-list">
+        <view class="voice-item {{voiceItem.status!=2&&voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length&&' has-speedup-info'}}" wx:for="{{voiceInfoList}}" wx:for-item="voiceItem" wx:key="{{idx}}">
+            <view class="voice-item-left-part">
+                <image binderror="imgLoadError" bindtap="uploadTap" class="voice-item-icon" data-index="{{index}}" data-voice-id="{{voiceItem.id}}" mode="aspectFill" src="{{voiceItem.imageUrl}}" value="{{voiceItem.voiceName}}" wx:if="{{voiceItem.imageUrl}}"></image>
+                <view bindtap="uploadTap" class="voice-item-icon" data-index="{{index}}" data-voice-id="{{voiceItem.id}}" wx:else>
+                    <view class="voice-item-icon-text">{{voiceItem.voiceName[0]}}</view>
+                </view>
+                <view class="voice-item-content">
+                    <input bindinput="reNameInput" class="voice-item-content-title-input" focus="{{true}}" value="{{reVoiceName}}" wx:if="{{reNameId===voiceItem.id}}"></input>
+                    <view class="voice-item-content-title" wx:else>{{voiceItem.voiceName}}
+              <text bindtap="reName" class="rename-btn" data-voice-id="{{voiceItem.id}}" data-voice-name="{{voiceItem.voiceName}}" wx:if="{{isEdit&&(!voiceItem.updateNameCount||voiceItem.updateNameCount<2)}}">重命名</text>
+                    </view>
+                    <view class="hide{{voiceItem.status==2?'show':''}}">
+                        <view class="voice-item-content-hint">ID:{{voiceItem.batchId}}</view>
+                        <view class="voice-item-content-hint">{{voiceItem.showUpdateTime}}</view>
+                    </view>
+                    <view class="voice-item-content-hint hide{{voiceItem.status!=2?'show':''}}">制作中，大约需要
+              <text wx:if="{{!(voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length||0)==1}}">45</text>
+                        <text wx:elif="{{!(voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length||0)==2}}">40</text>
+                        <text wx:elif="{{!(voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length||0)==3}}">30</text>
+                        <text wx:else>60</text>分钟，请关注微信系统通知</view>
+                    <view class="speed-up-info" wx:if="{{voiceItem.status!=2&&voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length}}">*已有{{voiceItem.voiceSpeedInfo.speedInfo.length||0}}位好友为你加速，节省约
+              <text wx:if="{{voiceItem.voiceSpeedInfo.speedInfo.length==1}}">15</text>
+                        <text wx:elif="{{voiceItem.voiceSpeedInfo.speedInfo.length==2}}">20</text>
+                        <text wx:else>30</text>分钟
+            </view>
+                </view>
+            </view>
+            <view class="voice-item-status-text hide{{!reNameId&&!isEdit&&voiceItem.status!=2?'show':''}}">
+                <text>{{voiceItem.progress}}%</text>
+                <form bindsubmit="speedUpReport" data-voice-id="{{voiceItem.id}}" data-voice-index="{{index}}" reportSubmit="true">
+                    <button class="speed-up-btn {{voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length>=3&&'disabled'}}" formType="submit" hoverClass="t">{{voiceItem.voiceSpeedInfo&&voiceItem.voiceSpeedInfo.speedInfo&&voiceItem.voiceSpeedInfo.speedInfo.length>=3?'已':''}}加速</button>
+                </form>
+            </view>
+            <view bindtap="clickItemPlay" class="hide{{!reNameId&&!isEdit&&voiceItem.status==2?'show':''}} voice-item-btn-wp" data-vcn="{{voiceItem.vcn}}">
+                <view class="loading-wp" wx:if="{{currentPlayVoiceId==voiceItem.vcn&&isPlayLoading}}">
+                    <image class="voice-item-btn loading" src="/images/icon/V2/icon-content-loading@2x-min.png"></image>
+                </view>
+                <image class="voice-item-btn hide{{!(isPlayLoading&&currentPlayVoiceId==voiceItem.vcn)?'show':''}}" src="{{currentPlayVoiceId==voiceItem.vcn?'/images/icon/V2/icon-content-playing@2x-min.png':'/images/icon/V2/icon-content-paused@2x-min.png'}}"></image>
+                <image class="voice-item-btn voice-item-btn hide{{isPlayLoading&&currentPlayVoiceId==voiceItem.vcn?'show':''}}" src="/images/icon/V2/icon-content-playing@2x-min.png"></image>
+            </view>
+            <view class="voice-item-btn-wp hide{{isEdit?'show':''}}">
+                <image bindtap="clickItemDelete" class="voice-item-delete-btn" data-index="{{index}}" data-name="{{voiceItem.voiceName}}" data-vcn="{{voiceItem.vcn}}" src="/images/icon/V2/icon-delete@2x-min.png"></image>
+            </view>
+            <view class="hide{{!isEdit&&reNameId===voiceItem.id?'show':''}}">
+                <view bindtap="updateName" class="confirm-update-name" data-index="{{index}}" data-last-times="{{2-(voiceItem.updateNameCount||0)}}" data-name="{{voiceItem.voiceName}}" data-voice-id="{{voiceItem.id}}">确认</view>
+                <view bindtap="cancelUpdateName" class="confirm-update-name cancel-update-name" data-index="{{index}}" data-name="{{voiceItem.voiceName}}" data-voice-id="{{voiceItem.id}}">取消</view>
+            </view>
+        </view>
+    </view>
+    <view class="list-reqerror-tip {{loadError&&(!voiceInfoList||!voiceInfoList.length)?'page-error-show':''}}">
+    网络异常，下拉刷新重新获取
+  </view>
+    <view class="voice-loading-item">
+        <block wx:if="{{loading&&offset!==0}}">正在载入更多...</block>
+        <block wx:elif="{{!hasMore&&!loading&&voiceInfoList.length}}">没有更多了哦</block>
+        <block wx:elif="{{!hasMore&&!loading&&!loadError&&!voiceInfoList.length}}">您还没有声音哟</block>
+    </view>
+</view>
+<cropper bind:getCropperImg="getCropperImg" ratio="{{ratio}}" url="{{originUrl}}"></cropper>
+<component-modal bindconfirm="deleteItem" cancelBtnLabel="取消" confirmBtnLabel="删除" id="deleteHint" title="">
+    <view class="tip-content">删除{{deleteItemName}}声音后，该声音所有相关数据会一并删除，确定删除吗？</view>
+</component-modal>
+<component-modal customComponents="true" hideCancelBtn="true" id="speedUpModal" title="-加速指引-">
+    <view class="tip-content speed-tip-content">
+        <view class="tip">- 每位好友可以为你加速一次，最多3次</view>
+        <view class="tip">- 每次加速可以为你节省约15分钟的排队时间</view>
+        <view class="tip">- 点击下方按钮发送到群里，好友点击后即可加速</view>
+    </view>
+    <button class="speed-up-share" hoverClass="t" openType="share" slot="confirm-btn">发送</button>
+</component-modal>
+<component-modal bindcancel="reNameCancel" bindconfirm="reNameConfirm" cancelBtnLabel="取消" confirmBtnLabel="确认" id="reNameModal" title="">
+    <view class="tip-content">一个声音只能重命名2次，当前剩余次数{{lastTimes}}次，您确认更名为“{{reVoiceName}}”吗？</view>
+</component-modal>

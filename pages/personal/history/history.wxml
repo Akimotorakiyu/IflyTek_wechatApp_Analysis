@@ -1,0 +1,36 @@
+<view class="page-personal">
+    <view class="history-header">
+        <view class="history-count">共{{historyCount}}篇</view>
+        <view class="header-item-btns">
+            <view bindtap="clickEdit" class="item-btn-text hide{{isEdit?'':'show'}}">编辑</view>
+            <view bindtap="clickFinish" class="item-btn-text hide{{isEdit?'show':''}}">完成</view>
+        </view>
+    </view>
+    <scroll-view bindscrolltolower="listenItemScrollLower" class="history-items-scrolview" scrollY="true">
+        <view class="history-item-list">
+            <view class="history-item-root" wx:for="{{listenHistoryList}}" wx:for-item="listenItem" wx:key="listenItemScrollLower">
+                <view class="history-item-divider"></view>
+                <view bindtap="clickItem" class="history-item" data-is-module-article="{{listenItem.moduleInfo&&true}}" data-itemsid="{{listenItem&&listenItem.itemSid}}">
+                    <view>
+                        <view class="history-item-title">{{listenItem&&listenItem.articleInfo&&listenItem.articleInfo.title}}</view>
+                        <view class="history-item-speaker">声音: {{listenItem&&listenItem.vcnInfo&&listenItem.vcnInfo.voiceName}}</view>
+                    </view>
+                    <view class="hide{{voiceItem.status==1?'':'show'}}">
+                        <image catchtap="clickItemDelete" class="history-item-btn hide{{isEdit?'show':''}}" data-index="{{index}}" data-itemsid="{{listenItem&&listenItem.itemSid}}" src="/images/icon/V2/icon-delete@2x-min.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view>
+                <view class="history-loading-item">
+                    <block wx:if="{{loading}}">正在载入更多...</block>
+                    <block wx:elif="{{!loading&&loadError}}">数据加载异常</block>
+                    <block wx:elif="{{!hasMore&&!loading&&listenllistenHistoryListist.length}}">没有更多了哦</block>
+                    <block wx:elif="{{!hasMore&&!loading&&!listenHistoryList.length}}">您还没有过听单哟</block>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<component-modal bindconfirm="deleteItem" cancelBtnLabel="取消" confirmBtnLabel="删除" id="deleteHint" title="">
+    <view class="tip-content">确定删除这条朗读历史吗？</view>
+</component-modal>

@@ -1,0 +1,74 @@
+.page-inner {
+    min-height: 100vh;
+    padding: 0;
+}
+
+.page-container {
+    padding: 40rpx 40rpx 0;
+}
+
+.overhidden {
+    max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page-header {
+    font-size: 0;
+}
+
+.banner-swiper {
+    height: 307rpx;
+}
+
+.banner-swiper .slide-image {
+    width: 100%;
+}
+
+.apps-list {
+    margin: 0 -20rpx;
+}
+
+.apps-list::after {
+    clear: both;
+}
+
+.apps-list .app-item {
+    width: 100%;
+    box-sizing: border-box;
+    height: 350rpx;
+    text-align: center;
+}
+
+.apps-list .app-item .app-item-logo {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-footer {
+    padding: 60rpx 0 30rpx;
+}
+
+.credentials-card-area {
+    width: 630rpx;
+    height: 738rpx;
+    border: 0;
+    background: transparent;
+}
+
+.page-guide-content {
+    overflow-y: hidden;
+}
+
+.page-guide-content-trans {
+    background: transparent;
+}
+
+.guide-index-tip {
+    position: absolute;
+    width: 504rpx;
+    height: 146rpx;
+    bottom: -16rpx;
+    left: 10rpx;
+}

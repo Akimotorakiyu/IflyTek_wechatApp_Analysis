@@ -1,0 +1,49 @@
+<view style="height:100vh;">
+    <view class="page-custom-children page-rap">
+        <image class="top-header-img" mode="widthFix" src="/images/application/top-header-min.png"></image>
+        <view class="lrc-wrapper">
+            <image class="lrc-wrapper-bg" mode="widthFix" src="/images/application/bg-block-min.png"></image>
+            <scroll-view bindscroll="scrollLrcView" class="lrc-view" scrollTop="{{lrcScrollTop}}" scrollWithAnimation="true" scrollY="true">
+                <view class="lrc-text {{lrcIdex==currentLrcIndex?'active':''}}" wx:for="{{parsedlrc}}" wx:for-index="lrcIdex" wx:for-item="lrcItem">{{lrcItem[1]}}</view>
+            </scroll-view>
+            <view class="audio-bar-wrapper">
+                <view class="audio-rap-control" wx:if="{{!playMask}}">
+                    <view bindtap="audioControl" class="audio-control">
+                        <image class="audio-control-icon" hidden="{{playStatus!=='paused'}}" src="/images/audio/audio_play.png"></image>
+                        <image class="audio-control-icon" hidden="{{playStatus!=='playing'}}" src="/images/audio/audio_pause.png"></image>
+                        <image class="audio-control-icon spin" hidden="{{playStatus!=='waiting'}}" src="/images/audio/audio_loading.png"></image>
+                    </view>
+                </view>
+                <view class="slider-bar-wrapper">
+                    <view class="cur-time">{{currentTimeFormatted}}</view>
+                    <slider backgroundColor="#19152F" bindchange="rapTimeDraged" bindchanging="rapTimeDraging" blockColor="#F7F7F7" blockSize="12" class="slider-bar" max="{{audioDuration}}" min="0" step="0.01" value="{{currentTime}}"></slider>
+                    <view class="total-time">{{audioDurationFormatted}}</view>
+                </view>
+            </view>
+            <view bindtap="startPlay" class="pause-mask" wx:if="{{playMask}}">
+                <image src="/images/icon/play-lg.png"></image>
+            </view>
+        </view>
+        <view class="footer-bar-wrapper">
+            <view bindtap="gotoHome" class="_btn entry-btn">
+                <image class="_btn-icon" src="/images/icon/home-min.png"></image>
+                <text class="_btn-text">我也要复刻声音</text>
+            </view>
+            <view class="footer-btns">
+                <button bindgetuserinfo="authInfoGetedTab" class="_btn  entry-btn" data-tab-type="share" openType="getUserInfo" plain="true" wx:if="{{!hasUsr}}">
+                    <image class="_btn-icon" src="/images/icon/zoon-min.png"></image>
+                    <text class="_btn-text">分享到朋友圈</text>
+                </button>
+                <view bindtap="showShareDialog" class="_btn entry-btn" plain="true" wx:elif="{{hasUsr}}">
+                    <image class="_btn-icon" src="/images/icon/zoon-min.png"></image>
+                    <text class="_btn-text">分享到朋友圈</text>
+                </view>
+                <button class="_btn entry-btn" hoverClass="t" openType="share" plain="true">
+                    <image class="_btn-icon" src="/images/icon/share-friends-min.png"></image>
+                    <text class="_btn-text">分享给群/好友</text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<component-share bgUrl="{{shareCardBg}}" canvasHeight="830" id="shareModal" newShare="true" shareArticleTitle="小青龙rap歌曲" sourceModuleName="小青龙活动" speakerNickName=" {{speakerInfo.nickName}}"></component-share>

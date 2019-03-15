@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "录音采集",
+    "disableScroll": true,
+    "usingComponents": {
+        "component-modal": "../../../components/modal/index"
+    }
+}

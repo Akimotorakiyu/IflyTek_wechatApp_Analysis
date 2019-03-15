@@ -1,0 +1,42 @@
+<view class="page-content">
+    <view class="page-header">
+        <view class="user-info">
+            <image class="login-icon" src="{{userPicture}}"></image>
+            <view class="nick-name">{{nickName}}</view>
+        </view>
+    </view>
+    <view class="common-all-item">
+        <navigator url="../voice/voice">
+            <view class="common-item">
+                <image class="common-left-icon icon-voices" src="/images/icon/V2/icon-myvoices@2x-min.png"></image>
+                <view class="title-text">我的声音</view>
+                <view class="hint-text">{{voiceNum}}个声音</view>
+                <image class="common-right-icon" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+            </view>
+        </navigator>
+        <view class="common-divider"></view>
+        <navigator url="../history/history">
+            <view class="common-item">
+                <image class="common-left-icon icon-history" src="/images/icon/V2/icon-listen-history@2x-min.png"></image>
+                <view class="title-text">朗读历史</view>
+                <view class="hint-text">{{historyNum}}篇</view>
+                <image class="common-right-icon" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+            </view>
+        </navigator>
+    </view>
+    <view class="common-all-item">
+        <view class="common-item">
+            <image class="common-left-icon icon-feedback" src="/images/icon/V2/icon-feedback@2x-min.png"></image>
+            <view class="title-text">意见反馈</view>
+            <button class="personal-contact-button" hoverClass="t" openType="contact"></button>
+        </view>
+        <view class="common-divider"></view>
+        <navigator url="../about/about">
+            <view class="common-item">
+                <image class="common-left-icon icon-about" src="/images/icon/V2/icon-about@2x-min.png"></image>
+                <view class="title-text">关于</view>
+            </view>
+        </navigator>
+    </view>
+    <button bindgetuserinfo="getUserInfo" class="personal-getuserinfo-btn" hoverClass="t" openType="getUserInfo" wx:if="{{!hasUser}}"></button>
+</view>

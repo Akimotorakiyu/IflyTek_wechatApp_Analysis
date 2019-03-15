@@ -1,0 +1,38 @@
+.guide-sub-title {
+    margin-top: 30rpx;
+}
+
+.guide-btn-wrapper {
+    margin-top: 50rpx;
+}
+
+.guide-content {
+    padding-top: 80rpx;
+}
+
+.guide-content .guide-title {
+    font-size: 36rpx;
+    color: #333333;
+    margin-bottom: 80rpx;
+}
+
+.main-btn {
+    height: 100rpx;
+    width: 630rpx;
+    line-height: 100rpx;
+}
+
+.tip-content {
+    padding: 50rpx 45rpx;
+}
+
+.modal-confirm-btn {
+    height: 86rpx;
+    padding: 0;
+    width: 100%;
+    color: #333;
+    line-height: 86rpx;
+    font-size: 34rpx;
+    text-align: center;
+    background: transparent;
+}

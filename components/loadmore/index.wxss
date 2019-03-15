@@ -1,0 +1,41 @@
+.m-loadmore {
+    width: 100%;
+    margin: 0.5em auto;
+    line-height: 1.6em;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.m-loading {
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    vertical-align: middle;
+    animation: rotate 1s linear infinite;
+}
+
+.m-loadmore__tips {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15rpx;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

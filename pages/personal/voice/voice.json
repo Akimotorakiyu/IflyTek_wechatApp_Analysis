@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的声音",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "component-modal": "../../../components/modal/index",
+        "cropper": "../../../components/cropper/cropper"
+    }
+}

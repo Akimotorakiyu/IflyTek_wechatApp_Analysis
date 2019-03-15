@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "component-share": "/components/sharecard/sharecard"
+    }
+}

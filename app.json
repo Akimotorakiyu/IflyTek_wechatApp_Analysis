@@ -1,0 +1,73 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/voicemake/guidefirst/index",
+        "pages/voicemake/guidesecond/index",
+        "pages/voicemake/invitecode/index",
+        "pages/voicemake/submit/index",
+        "pages/voicemake/main/index",
+        "pages/personal/index/index",
+        "pages/personal/about/about",
+        "pages/personal/voice/voice",
+        "pages/personal/history/history",
+        "pages/personal/protocol/index",
+        "pages/personal/phonebind/index",
+        "pages/voiceapplication/share/index",
+        "pages/voiceapplication/main/index",
+        "pages/voiceapplication/promotion/index",
+        "pages/activity/rap/index",
+        "pages/activity/product/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#F9E9D7",
+        "navigationBarTitleText": "讯飞留声",
+        "navigationBarTextStyle": "black",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#F9F9F9",
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": 50
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#333333",
+        "backgroundColor": "#FFFFFF",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "声音复刻",
+                "iconPath": "images/icon/V2/icon-tab-home@3x-min.png",
+                "selectedIconPath": "images/icon/V2/icon-tab-home-selected@3x-min.png"
+            },
+            {
+                "pagePath": "pages/voiceapplication/main/index",
+                "text": "声音应用",
+                "iconPath": "images/icon/V2/icon-tab-application@3x-min.png",
+                "selectedIconPath": "images/icon/V2/icon-tab-application-selected@3x-min.png"
+            },
+            {
+                "pagePath": "pages/personal/index/index",
+                "text": "个人中心",
+                "iconPath": "images/icon/V2/icon-tab-personal@3x-min.png",
+                "selectedIconPath": "images/icon/V2/icon-tab-personal-selected@3x-min.png"
+            }
+        ],
+        "position": "bottom"
+    },
+    "networkTimeout": {
+        "request": 15000
+    },
+    "subPackages": [
+        {
+            "root": "packageApplication",
+            "pages": [
+                "pages/column/index",
+                "pages/listenpage/index",
+                "pages/share/index",
+                "pages/callshare/index",
+                "pages/callinput/index",
+                "pages/accelerator/index"
+            ]
+        }
+    ]
+}

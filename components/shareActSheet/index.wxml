@@ -1,0 +1,18 @@
+<view bindtap="cancelActSheet" catchtouchmove="preventTouchMove" class="actionsheet-mask modal-mask" wx:if="{{showActionSheet}}"></view>
+<view class="actionsheet-dialog" wx:if="{{showActionSheet}}">
+    <view class="actionsheet-share-menus">
+        <view class="share-menu-friends btn-wp-db">
+            <button class="btn" hoverClass="t" openType="share" plain="true">
+                <image class="_btn-icon" src="/images/icon/V2/icon-share-friends@3x-min.png"></image>
+                <text class="_btn-text">分享给好友/群</text>
+            </button>
+        </view>
+        <view class="share-menu-qrcode btn-wp-db">
+            <view bindtap="sharePicture" class="btn" plain="true">
+                <image class="_btn-icon" src="/images/icon/V2/icon-share-zone@3x-min.png"></image>
+                <text class="_btn-text">分享到朋友圈</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="cancelActSheet" class="actionsheet-cancel" wx:if="{{!hiddenCancel}}">取消</view>
+</view>

@@ -1,0 +1,17 @@
+.product-wp {
+    background-color: #4056B1;
+    font-size: 0;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.product-wp image {
+    width: 750rpx;
+    margin: 0;
+    padding: 0;
+}
+
+.product-wp .to-home {
+    width: 420rpx;
+    margin: 66rpx auto 100rpx;
+}

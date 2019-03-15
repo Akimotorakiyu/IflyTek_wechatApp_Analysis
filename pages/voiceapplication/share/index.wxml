@@ -1,0 +1,76 @@
+<view class="page-content">
+    <view class="page-custom-children page-custom-children-v1_2_1 page_cover" wx:if="{{hasUser}}">
+        <block wx:if="{{articleStatus&&articleStatus!='9'}}">
+            <image class="block-left-top" src="/images/application/content-lefttop-min.png"></image>
+            <image class="block-bottom-right" src="/images/application/content-bottomright-min.png"></image>
+            <view class="article-title-container page-newsflash-header">
+                <image class="page-newsflash-logo" src="/images/application/content-logo-min.png"></image>
+                <text class="article-title">{{opennerUserName?opennerUserName+'，':''}}说起来你可能不信，这不是录音！是AI为我复刻的声音</text>
+            </view>
+            <view class="audio-container">
+                <view class="full-audio-bar-container">
+                    <view bindtap="controlPlay" class="block-flex block-left vcn-left vcn-avatar">
+                        <image src="{{speakerInfo.imgUrl}}"></image>
+                        <image class="audio-control-icon" hidden="{{audioControlIcon=='playing'||audioControlIcon=='waiting'?true:false}}" src="/images/audio/audio_play.png"></image>
+                        <image class="audio-control-icon" hidden="{{audioControlIcon=='paused'||audioControlIcon=='waiting'?true:false}}" src="/images/audio/audio_pause.png"></image>
+                        <image class="audio-control-icon spin" hidden="{{audioControlIcon=='playing'||audioControlIcon=='paused'?true:false}}" src="/images/audio/audio_loading.png"></image>
+                    </view>
+                    <view class="block-flex block-right">
+                        <view class="option-bar-wrapper">
+                            <view class="vcn-desc">
+                                <block wx:if="{{speakerInfo.vcn!='xiaoyuan'&&speakerInfo.vcn!='xiaozhang'}}">
+                    复刻的声音-{{speakerInfo.speakerName}}
+                  </block>
+                                <block wx:else>
+                    明星音库-{{speakerInfo.speakerName}}
+                  </block>
+                            </view>
+                        </view>
+                        <view class="time-slide-bar">
+                            <view class="voice-wave-wp">
+                                <image class="voice-wave" hidden="{{voiceWaveIdx!==1}}" src="/images/application/voice-wave-1.png"></image>
+                                <image class="voice-wave" hidden="{{voiceWaveIdx!==2}}" src="/images/application/voice-wave-2.png"></image>
+                                <image class="voice-wave" hidden="{{voiceWaveIdx!==3}}" src="/images/application/voice-wave-3.png"></image>
+                                <image class="voice-wave" hidden="{{voiceWaveIdx!==4}}" src="/images/application/voice-wave-4.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <scroll-view class="article-content-wrapper" scrollY="true" style="height:{{scrollHieght}};">
+            <block wx:if="{{articleStatus&&articleStatus!='9'}}">
+                <view class="article-rel-container" wx:if="{{broadcast}}"></view>
+                <view class="article-content-container">
+                    <view class="article-content">
+                        <text class="{{currentHighlightIdx==paragraph.index?'active':''}}" id="paragraph_{{paragraph.index}}" wx:for="{{paragraphs}}" wx:for-index="idx" wx:for-item="paragraph" wx:key="index">{{paragraph.txt}}</text>
+                    </view>
+                </view>
+            </block>
+            <view class="page-error" wx:elif="{{articleStatus=='9'}}">文章详情获取异常</view>
+            <view class="page-error" wx:elif="{{articleStatus=='999999'}}">文章详情获取异常</view>
+            <view class="page-error" wx:elif="{{articleStatus}}">该文章含有敏感信息已被下线</view>
+        </scroll-view>
+        <view class="footer-bar-wrapper" wx:if="{{articleStatus&&articleStatus!='9'}}">
+            <view class="footer-btns">
+                <view bindtap="gotoHome" class="btn btn-home">
+                    <image class="_btn-icon" src="/images/icon/fix-tap-home.png"></image>我也要复刻声音</view>
+                <button class="btn btn-share" openType="share" plain="true">
+                    <image class="_btn-icon" src="/images/icon/fix-tap-share.png"></image>
+                    <text>分享给好友/群</text>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view class="page-worldcup" wx:elif="{{hasUser===false}}">
+        <view class="article-title-container page-newsflash-header video-content-wrapper" wx:if="{{articleStatus&&articleStatus!='9'}}">
+            <image class="page-newsflash-logo" src="{{titleImage}}"></image>
+            <text class="article-title">{{title}}</text>
+        </view>
+        <view class="video-wrapper">
+            <image class="video-card" src="/images/application/video-card.png"></image>
+            <view class="video-card-tip">点击打开</view>
+        </view>
+        <button bindgetuserinfo="authInfoGetedTab" class="btn btn-share btn-page" hoverClass="t" openType="getUserInfo" plain="true"></button>
+    </view>
+</view>

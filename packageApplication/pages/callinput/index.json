@@ -1,0 +1,7 @@
+{
+    "backgroundColor": "#0c1940",
+    "usingComponents": {
+        "component-share-actsheet": "../../../../components/shareActSheet/index",
+        "component-share": "../../../../components/sharecard/sharecard"
+    }
+}

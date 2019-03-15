@@ -1,0 +1,51 @@
+.guide-content {
+    padding-top: 80rpx;
+}
+
+.guide-env-pic {
+    height: 800rpx;
+    width: 652rpx;
+    margin-left: 49rpx;
+}
+
+.guide-protocol {
+    line-height: 32rpx;
+    vertical-align: middle;
+}
+
+.guide-protocol .checkbox-box {
+    height: 60rpx;
+    width: 60rpx;
+}
+
+.guide-protocol .tips {
+    display: inline-block;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    margin-left: 2rpx;
+}
+
+checkbox {
+    visibility: hidden;
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    vertical-align: top;
+}
+
+.checkbox .check-image {
+    position: absolute;
+    height: 32rpx;
+    width: 32rpx;
+    left: 14rpx;
+    margin-right: 8rpx;
+    top: 0;
+}
+
+.guide-btn-wrapper {
+    position: relative;
+    margin-top: 94rpx;
+}

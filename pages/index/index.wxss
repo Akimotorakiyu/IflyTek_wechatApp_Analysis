@@ -1,0 +1,243 @@
+.page-content {
+    min-height: 100vh;
+    height: 1088rpx;
+    width: 100%;
+}
+
+.page-content .page-index {
+    height: 1088rpx!important;
+    max-height: unset!important;
+    overflow: hidden;
+}
+
+.index-topbar {
+    width: 750rpx;
+    height: 308rpx;
+}
+
+.proh5 {
+    height: 24rpx;
+    font-family: PingFangSC;
+    font-size: 24rpx;
+    color: #C89459;
+    letter-spacing: 0;
+    line-height: 24rpx;
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    top: 198rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.proh5 .arrow-right {
+    width: 14rpx;
+    height: 16rpx;
+    margin-left: 16rpx;
+}
+
+.make-number {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28rpx;
+    position: absolute;
+    width: 100%;
+    top: 804rpx;
+}
+
+.high-screen .make-number {
+    top: 829rpx;
+}
+
+.voice-banner-swiper {
+    height: 560rpx;
+    width: 750rpx;
+    position: absolute;
+    top: 264rpx;
+    overflow: hidden;
+}
+
+.zoom-small .voice-banner-swiper {
+    height: 500rpx;
+}
+
+.zoom-small .make-number {
+    top: 768rpx;
+}
+
+.high-screen .voice-banner-swiper {
+}
+
+.voice-banner-swiper swiper-item {
+    text-align: center;
+}
+
+.voice-banner-swiper .slide-img-wp {
+    display: inline-block;
+    height: 500rpx;
+    width: 500rpx;
+    position: relative;
+}
+
+.voice-banner-swiper .slide-image {
+    height: 500rpx;
+    width: 500rpx;
+}
+
+.voice-banner-swiper .play-control {
+    position: absolute;
+    bottom: 16rpx;
+    right: 16rpx;
+    height: 48rpx;
+    width: 48rpx;
+}
+
+.voice-banner-swiper .play-control image {
+    height: 48rpx;
+    width: 48rpx;
+}
+
+.entry-btn-tip {
+    top: -10rpx;
+    position: relative;
+    width: 100%;
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+
+.entry-btn-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 856rpx;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.high-screen .entry-btn-wrapper {
+    top: 978rpx;
+}
+
+.entry-btn {
+    position: relative;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    background-image: linear-gradient(270deg,#EBB87E 0%,#CD9B63 100%);
+    box-shadow: unset;
+    font-size: 40rpx;
+    font-weight: normal;
+}
+
+.entry-btn-disabled::after,.entry-btn.disabled::after {
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.invitate-wrapper {
+    text-align: center;
+}
+
+.entry-invitecode-btn {
+    color: #C89459;
+    font-size: 24rpx;
+    text-align: center;
+    margin-top: 26rpx;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: 0;
+    -webkit-appearance: none;
+    display: inline-block;
+}
+
+.entry-invitecode-btn>.arrow-right {
+    width: 14rpx;
+    height: 16rpx;
+    margin-left: 12rpx;
+}
+
+.tip-content {
+    padding: 60rpx 40rpx;
+    text-align: center;
+}
+
+.tip-content .tip+.tip {
+    margin-top: 10rpx;
+}
+
+.remind-me {
+    display: inline;
+    background: transparent;
+    background: transparent;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+}
+
+.page-guide-content {
+    overflow-y: auto;
+}
+
+.page-guide-content-trans {
+    background: transparent;
+}
+
+.main-btn .time-tips {
+    display: block;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    color: #fff;
+}
+
+.main-btn.has-timestip {
+    line-height: unset;
+}
+
+.main-btn.has-timestip .label {
+    display: block;
+    font-size: 36rpx;
+    margin: 20rpx 0 10rpx;
+    line-height: 36rpx;
+}
+
+.guide-userguide-tip {
+    width: 504rpx;
+    height: 192rpx;
+    margin-left: 123rpx;
+    margin-top: 228rpx;
+}
+
+.guide-startbtn-tip {
+    width: 536rpx;
+    height: 146rpx;
+    margin-top: 786rpx;
+    margin-left: 107rpx;
+    top: -126rpx;
+    position: relative;
+}
+
+.high-screen .guide-startbtn-tip {
+    margin-top: 908rpx;
+}
+
+.guide-code-tip {
+    width: 580rpx;
+    height: 192rpx;
+    margin-top: 872rpx;
+    margin-left: 85rpx;
+    top: -142rpx;
+    position: relative;
+}
+
+.high-screen .guide-code-tip {
+    margin-top: 996rpx;
+}

@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "cropper": "../../../../components/cropper/cropper"
+    }
+}

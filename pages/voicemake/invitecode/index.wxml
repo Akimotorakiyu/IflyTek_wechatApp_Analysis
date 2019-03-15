@@ -1,0 +1,15 @@
+<view class="page-content">
+    <view class="guide-content">
+        <view class="guide-title">请输入邀请码</view>
+        <view class="guide-info-wrapper">
+            <view class="input-group">
+                <input bindblur="onBlur" bindfocus="onFocus" bindinput="inviteCodeInput" bindtouchstart="onFocus" class="input-block" focus="{{false}}" placeholder="{{placeholderTxt}}" placeholderClass="ip-placeholder" value="{{inviteCode}}"></input>
+                <image class="input-clear-icon" src="/images/icon/V2/icon-cricle-clear.png"></image>
+            </view>
+        </view>
+        <view class="guide-btn-wrapper">
+            <button bindtap="bindInviteCode" class="main-btn {{disabled?'disabled':''}}" hoverClass="t">确定,去录音制作</button>
+            <button class="main-btn" hoverClass="t" openType="contact" sessionFrom="invitation">点击发送[0]快速关注公众号</button>
+        </view>
+    </view>
+</view>

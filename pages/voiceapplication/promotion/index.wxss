@@ -1,0 +1,113 @@
+.page-content {
+    color: #333;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 50rpx;
+}
+
+.page-header-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 308rpx;
+    width: 100%;
+    z-index: 0;
+}
+
+.page-footer {
+    position: relative;
+    width: 100%;
+    top: 20rpx;
+}
+
+.promotion-title-wp {
+    clear: both;
+    overflow: hidden;
+    text-align: center;
+}
+
+.promotion-title {
+    box-sizing: border-box;
+    height: 101rpx;
+    width: 332rpx;
+}
+
+.promotion-desc {
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.promotion-apps {
+    margin: 180rpx -30rpx 0;
+    z-index: 9;
+}
+
+.promotion-item {
+    position: relative;
+    text-align: center;
+}
+
+.promotion-item::after {
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.promotion-item .promotion-logo {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+}
+
+.promotion-item .promotion-info {
+    position: absolute;
+    left: 210rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30rpx;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+.promotion-item+.promotion-item {
+    margin-top: 16rpx;
+}
+
+.promotion-item .promotion-prodc-img {
+    width: 710rpx;
+    height: 710rpx;
+    margin-left: 9rpx;
+}
+
+.more-area {
+    font-size: 28rpx;
+    color: #CD9B63;
+    text-align: center;
+    line-height: 30rpx;
+    margin-bottom: 40rpx;
+}
+
+.scene-bar {
+    display: flex;
+    padding: 0 30rpx;
+}
+
+.scene-bar .scene-card {
+    flex: 1;
+    -webkit-box-flex: 1;
+    text-align: center;
+}
+
+.scene-card .scene-image {
+    width: 114rpx;
+    height: 114rpx;
+}
+
+.scene-card text {
+    display: none;
+    color: #666;
+    line-height: 34rpx;
+    font-size: 28rpx;
+}

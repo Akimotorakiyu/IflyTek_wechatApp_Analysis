@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#122044",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "component-share-actsheet": "../../../../components/shareActSheet/index",
+        "component-share": "../../../../components/sharecard/sharecard"
+    }
+}

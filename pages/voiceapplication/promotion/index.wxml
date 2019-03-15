@@ -1,0 +1,31 @@
+<view class="page-content">
+    <image class="page-header-bg" src="/images/V2/proh5-top-banner@2x-min.png"></image>
+    <view class="promotion-apps">
+        <view class="promotion-apps-list">
+            <view class="promotion-item">
+                <image class="promotion-prodc-img" src="/images/V2/proh5-content-bg@2x-min.png"></image>
+            </view>
+        </view>
+        <view class="page-footer">
+            <view class="more-area">更多应用接入敬请期待</view>
+            <view class="scene-bar">
+                <view class="scene-card">
+                    <image class="scene-image" src="/images/icon/V2/icon-children-reader@2x-min.png"></image>
+                    <text>儿童读物</text>
+                </view>
+                <view class="scene-card">
+                    <image class="scene-image" src="/images/icon/V2/icon-map@2x-min.png"></image>
+                    <text>地图导航</text>
+                </view>
+                <view class="scene-card">
+                    <image class="scene-image" src="/images/icon/V2/icon-intel-prodc@2x-min.png"></image>
+                    <text>智能硬件</text>
+                </view>
+                <view class="scene-card">
+                    <image class="scene-image" src="/images/icon/V2/icon-voice-assis@2x-min.png"></image>
+                    <text>语音助手</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

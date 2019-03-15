@@ -1,0 +1,17 @@
+<view>
+    <view capture-catch:touchmove="preventTouchMove" class="credentials-modal-mask" wx:if="{{showModal}}"></view>
+    <view capture-catch:touchmove="preventTouchMove" class="credentials-modal-dialog" wx:if="{{showModal}}">
+        <view class="credentials-modal-close">
+            <view bindtap="onClose" class="credentials-btn-close {{closeBtnClass}}" wx:if="{{!hideCloseIcon}}">
+                <image src="../../images/icon/icon-close-x.png"></image>
+            </view>
+        </view>
+        <view class="credentials-modal-content">
+            <slot></slot>
+        </view>
+        <view class="credentials-modal-footer">
+            <view bindtap="onClose" class="credentials-btn credentials-btn-cancel" wx:if="{{!hideCancelBtn}}">{{cancelBtnLabel}}</view>
+            <view bindtap="onConfirm" class="credentials-btn credentials-btn-confirm {{disabled?'disabled':''}}" wx:if="{{!hideConfirmBtn}}">{{confirmBtnLabel}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="page-content">
+    <view class="guide-content">
+        <view class="guide-title hidden"></view>
+        <view class="guide-info-wrapper">
+            <view class="input-group">
+                <input autoFocus bindinput="phoneInput" class="input-block" focus="true" placeholder="请输入手机号" type="number" value="{{phone}}"></input>
+                <image class="input-clear-icon" src="../../../images/icon/icon-close-x.png"></image>
+            </view>
+            <view class="input-group">
+                <input bindinput="codeInput" class="input-block code-input-block" placeholder="请输入验证码" value="{{validCode}}"></input>
+                <view bindtap="getValidateCode" class="input-code-btn" wx:if="{{validCodeStatus==0||countdown<=0}}">获取验证码</view>
+                <view class="input-code-btn {{validCodeStatus==1&&'count-down'}}" wx:else>{{countdown}}秒</view>
+            </view>
+        </view>
+        <view class="btn-wrapper">
+            <button bindtap="bindPhone" class="btn main-btn {{disabled?'disabled':''}}" hoverClass="t">确定</button>
+        </view>
+    </view>
+</view>
+<component-modal bindcancel="iknown" cancelBtnLabel="确认" hideConfirmBtn="true" id="uploadConfirm" title="上传确认">
+    <view class="tip-content">
+        <view class="tip">您命名为“{{voiceName}}”的声音即将上传训练，上传的声音将与您的手机号进行绑定</view>
+    </view>
+</component-modal>

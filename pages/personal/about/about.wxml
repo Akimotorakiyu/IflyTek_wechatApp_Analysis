@@ -1,0 +1,15 @@
+<view class="page-personal">
+    <view class="about-logo-part">
+        <image class="about-logo-icon" src="http://s1.haitunvoice.com/liusheng-mini-app/images/personal/img_personal_about_logo.png"></image>
+        <view class="about-name-text">讯飞留声</view>
+    </view>
+    <view class="about-item-divider"></view>
+    <view class="about-item">
+        <view class="about-item-text">商务合作：liusheng@iflytek.com</view>
+    </view>
+    <view class="about-item-divider"></view>
+    <view class="about-sub-part">
+        <view class="about-sub-text">微信搜索“讯飞留声”公众号即可关注</view>
+        <image class="about-sub-icon" src="http://s1.haitunvoice.com/liusheng-mini-app/images/personal/ls-qr-code.png"></image>
+    </view>
+</view>

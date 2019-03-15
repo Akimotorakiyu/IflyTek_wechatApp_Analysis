@@ -1,0 +1,12 @@
+<view class="page-content">
+    <view class="guide-content">
+        <image class="guide-flow-pic" src="/images/index/V2/voice-flow@2x-min.png"></image>
+        <view class="guide-btn-wrapper">
+            <view class="proh5-wp">
+                <view bindtap="toProduct" class="proh5">查看教程<image class="arrow-right" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+                </view>
+            </view>
+            <view bindtap="nextGuide" class="main-btn guide-next-btn">下一步</view>
+        </view>
+    </view>
+</view>

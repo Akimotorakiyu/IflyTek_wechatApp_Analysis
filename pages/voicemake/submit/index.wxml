@@ -1,0 +1,24 @@
+<view class="page-content">
+    <view class="guide-content">
+        <view class="guide-title">现在为您复刻的声音起个名字吧</view>
+        <view class="guide-info-wrapper">
+            <view class="input-group">
+                <input autoFocus bindinput="voiceNameInput" class="input-block" focus="true" placeholder="未命名" value="{{voiceName}}"></input>
+                <image class="input-clear-icon" src="/images/icon/V2/icon-cricle-clear.png"></image>
+            </view>
+        </view>
+        <view class="guide-btn-wrapper">
+            <form bindsubmit="voiceTrainSubmit" reportSubmit="true">
+                <button class="main-btn {{!voiceName&&'disabled'}}" formType="submit" hoverClass="t">上传</button>
+            </form>
+        </view>
+    </view>
+</view>
+<component-modal bindcancel="inputPhoneConfirm" bindconfirm="wxPhoneAuthConfirm" cancelBtnLabel="手机号输入绑定" confirmBtnLabel="微信授权绑定" customComponents="true" id="uploadConfirm" showCloseIcon="true" title="上传确认">
+    <view class="tip-content">
+        <view class="tip">您命名为“{{voiceName}}”的声音即将上传训练，上传的声音将与您的手机号进行绑定</view>
+    </view>
+    <view slot="confirm-btn">
+        <button bindgetphonenumber="phoneNumberGot" class="modal-confirm-btn" hoverClass="t" openType="getPhoneNumber">微信授权绑定</button>
+    </view>
+</component-modal>

@@ -1,0 +1,4 @@
+<view class="m-loadmore" wx:if="{{loadMore}}">
+    <image class="m-loading rotate" src="../../images/icon/icon_loading.png"></image>
+    <text class="m-loadmore__tips">正在加载</text>
+</view>

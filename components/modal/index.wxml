@@ -1,0 +1,15 @@
+<view capture-catch:touchmove="preventTouchMove" class="modal-mask" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <image bindtap="onAutoClose" class="close-icon" src="../../images/icon/close-icon.png" wx:if="{{showCloseIcon}}"></image>
+    <view class="modal-title" wx:if="{{title}}">{{title}}</view>
+    <view class="modal-content">
+        <slot></slot>
+    </view>
+    <view class="modal-footer">
+        <view bindtap="onCancel" class="btn-cancel" data-status="cancel" wx:if="{{!hideCancelBtn}}">{{cancelBtnLabel}}</view>
+        <view bindtap="onConfirm" class="btn-confirm" data-status="confirm" wx:if="{{!hideConfirmBtn}}">
+            <block wx:if="{{!customComponents}}">{{confirmBtnLabel}}</block>
+            <slot name="confirm-btn" wx:else></slot>
+        </view>
+    </view>
+</view>

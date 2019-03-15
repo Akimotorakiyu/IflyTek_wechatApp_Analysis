@@ -1,0 +1,31 @@
+<view class="page-inner">
+    <view class="page-header">
+        <swiper autoplay="{{autoplay}}" circular="true" class="banner-swiper" duration="{{duration}}" indicatorActiveColor="rgba(255,255,255,0.8)" indicatorDots="{{indicatorDots}}" interval="{{interval}}" wx:if="{{banners&&banners.length}}">
+            <swiper-item bindtap="bannerTap" data-banner-is-tab="{{bannerItem.action.pathType==0}}" data-banner-name="{{bannerItem.title}}" data-banner-page-path="{{bannerItem.action.pathUrl}}" data-banner-page-type="{{bannerItem.action.actionType}}" wx:for="{{banners}}" wx:for-item="bannerItem">
+                <image class="slide-image" mode="widthFix" src="{{bannerItem.img}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="page-container">
+        <view class="apps-list">
+            <view class="app-item" wx:for="{{apps}}" wx:for-index="idx" wx:for-item="appInfo" wx:key="{{idx}}">
+                <form bindsubmit="appCardTap" data-category-id="{{appInfo.moduleId}}" data-module-name="{{appInfo.name}}" reportSubmit="true" wx:if="{{appInfo.morningNews}}">
+                    <button class="app-item-logo" formType="submit" hoverClass="t">
+                        <image class="app-item-logo" src="{{appInfo.img}}"></image>
+                    </button>
+                </form>
+                <image bindtap="appCardTap" class="app-item-logo" data-category-id="{{appInfo.moduleId}}" data-module-name="{{appInfo.name}}" src="{{appInfo.img}}" wx:else></image>
+            </view>
+        </view>
+    </view>
+    <view class="page-footer">
+        <view bindtap="moreApps" class="main-btn entry-btn more-btn">更多应用</view>
+    </view>
+    <button bindgetuserinfo="getUserInfo" class="global-userinfo-btn" openType="getUserInfo" wx:if="{{!hasUser}}"></button>
+</view>
+<component-credentials-modal bind:confirm="onConfirm" btnType="{{confirmBtnType}}" confirmBtnLabel="{{confirmBtnType=='1'?'确定':'保存到相册'}}" disabled="{{credentialsBtnDisabled}}" id="credentialsModal">
+    <canvas canvasId="credentialsCanvas" capture-catch:touchmove="preventTouchMove" class="credentials-card-area"></canvas>
+</component-credentials-modal>
+<view bindtap="iKnowAppsGuide" class="page-guide-content page-guide-content-trans" wx:if="{{showAppsGuide<1}}">
+    <image class="guide-tip-bg guide-index-tip" index="0" src="/images/bg/3@2x-min.png"></image>
+</view>

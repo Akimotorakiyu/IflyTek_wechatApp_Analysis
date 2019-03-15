@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "讯飞留声",
+    "usingComponents": {
+        "component-credentials-modal": "../../components/credentialsModal/index",
+        "component-modal": "../../components/modal/index",
+        "component-carousel": "../../components/carousel/index"
+    }
+}

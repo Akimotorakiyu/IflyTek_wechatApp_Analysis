@@ -1,0 +1,78 @@
+.page-content {
+    color: #333;
+}
+
+.guide-sub-title {
+    margin-top: 30rpx;
+}
+
+.input-group+.input-group {
+    margin-top: 30rpx;
+}
+
+.input-block.code-input-block {
+    padding-right: 240rpx;
+}
+
+.input-code-btn {
+    position: absolute;
+    top: 0;
+    right: 60rpx;
+    width: 240rpx;
+    height: 90rpx;
+    padding-top: 25rpx;
+    z-index: 9;
+    text-align: center;
+    font-size: 30rpx;
+    box-sizing: border-box;
+    color: #666;
+}
+
+.count-down {
+    color: #C89459;
+}
+
+.input-code-btn::after {
+    content: " ";
+    position: absolute;
+    height: 40rpx;
+    width: 4rpx;
+    top: 30rpx;
+    right: 240rpx;
+    z-index: 10;
+    box-sizing: border-box;
+    background: #ccc;
+}
+
+.input-clear-icon {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    right: 105rpx;
+    top: 25rpx;
+    z-index: 9;
+}
+
+.btn-wrapper {
+    margin-top: 65rpx;
+    padding: 0 60rpx;
+}
+
+.btn {
+    font-size: 30rpx;
+    width: 580rpx;
+    border: 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #fff;
+}
+
+.tip-content {
+    padding: 50rpx 45rpx;
+}
+
+.main-btn {
+    height: 100rpx;
+    width: 630rpx;
+    line-height: 100rpx;
+}

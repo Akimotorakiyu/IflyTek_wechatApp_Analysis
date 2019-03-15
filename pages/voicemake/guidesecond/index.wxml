@@ -1,0 +1,23 @@
+<view class="page-content">
+    <view class="guide-content">
+        <image class="guide-env-pic" src="/images/index/V2/voicemake-tip@2x-min.png"></image>
+        <view class="guide-btn-wrapper">
+            <view bindtap="nextGuide" class="main-btn guide-next-btn">开始复刻声音</view>
+        </view>
+        <view class="guide-btn-extinfo">
+            <view class="guide-tip">
+                <checkbox-group bindchange="agreementsChange" class="guide-protocol">
+                    <label class="checkbox">
+                        <checkbox checked="{{agreements}}" class="checkbox-box" value="true"></checkbox>
+                        <image class="check-image" hidden="{{agreements}}" src="/images/icon/V2/checkbox@2x.png"></image>
+                        <image class="check-image" hidden="{{!agreements}}" src="/images/icon/V2/checkbox-checked@2x.png"></image>
+                    </label>
+                    <view bindtap="viewProtacal" class="tips">同意用户协议</view>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+</view>
+<modal bindconfirm="envConfirm" confirmText="好的" hidden="{{hiddenEnvModal}}" noCancel="true" title="温馨提示">
+  录音环境是否安静对于制作声音的成败、好坏有很大的影响噢，快来看看你所处的环境能打几分吧
+</modal>

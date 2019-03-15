@@ -1,0 +1,35 @@
+.guide-content {
+    padding-top: 80rpx;
+}
+
+.guide-flow-pic {
+    height: 656rpx;
+    width: 574rpx;
+    margin-left: 87rpx;
+}
+
+.guide-btn-wrapper {
+    position: relative;
+}
+
+.proh5 {
+    height: 28rpx;
+    font-family: PingFangSC;
+    font-size: 28rpx;
+    color: #C89459;
+    letter-spacing: 0;
+    line-height: 28rpx;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: -68rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.proh5 .arrow-right {
+    width: 14rpx;
+    height: 16rpx;
+    margin-left: 16rpx;
+}

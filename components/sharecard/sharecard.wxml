@@ -1,0 +1,21 @@
+<view bindtap="hintSharePicDialog" class="share-picture-dialog" wx:if="{{showSharePicture}}">
+    <view class="share-scroll-auto">
+        <view class="share-content-wrapper {{canvasHeight+172<=windowHeightRpx?'content-covered':''}}">
+            <canvas canvasId="{{canvasId}}" catchtap="noTouch" class="share-picture-part {{tempFiles?'canvas-hidden':''}}" style="{{canvasHeight&&'height:'+canvasHeight+172+'rpx;'}}">
+                <cover-view style="{{canvasHeight&&'height:'+canvasHeight+172+'rpx;'}}">
+                    <cover-view class="share-footer" style="{{canvasHeight&&'margin-top:'+canvasHeight+72+'rpx;'}}">
+                        <cover-view catchtap="authSetting" class="share-btn-save btn-text" hidden="{{!!usedAuth}}">保存至本地</cover-view>
+                        <cover-view catchtap="savePicture" class="share-btn-save btn-text" hidden="{{!(usedAuth&&canSharePicture)}}">保存至本地</cover-view>
+                        <button bindopensetting="openSettingCallBack" catchtap="noTouch" class="share-btn-save btn-text" hidden="{{!(usedAuth&&!canSharePicture)}}" hoverClass="t" openType="openSetting">保存至本地</button>
+                    </cover-view>
+                </cover-view>
+            </canvas>
+            <image class="share-picture-part" src="{{tempFiles}}" style="{{canvasHeight&&'height:'+canvasHeight+'rpx;'+(canvasWidth&&'width:'+canvasWidth+'rpx;')+(canvasWidth&&'margin-left:'+105+'rpx;')}}" wx:if="{{tempFiles}}"></image>
+            <view class="share-footer-wp" wx:if="{{tempFiles}}">
+                <view catchtap="authSetting" class="share-btn-save btn-text" wx:if="{{!usedAuth}}">保存至本地</view>
+                <button bindopensetting="openSettingCallBack" catchtap="noTouch" class="share-btn-save btn-text" hoverClass="t" openType="openSetting" wx:elif="{{usedAuth&&!canSharePicture}}">保存至本地</button>
+                <view catchtap="savePicture" class="share-btn-save btn-text" wx:elif="{{usedAuth&&canSharePicture}}">保存至本地</view>
+            </view>
+        </view>
+    </view>
+</view>

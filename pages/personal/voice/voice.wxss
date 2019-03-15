@@ -1,0 +1,377 @@
+.header-bar-container {
+    overflow: hidden;
+    height: 120rpx;
+    width: 100%;
+    background: #F9F9F9;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+    transition: all .6s ease;
+    top: -80rpx;
+}
+
+.voice-item-btn-wp {
+    font-size: 0;
+}
+
+.header-bar-container.top-fixed {
+    position: fixed;
+    z-index: 22;
+    top: 0;
+}
+
+.header-bar-container.top-fixed+.voice-item-list {
+    margin-top: 80rpx;
+}
+
+.history-count {
+    float: left;
+    font-size: 30rpx;
+    margin-left: 32rpx;
+    color: #666;
+    line-height: 120rpx;
+}
+
+.history-options {
+    float: right;
+    font-size: 26rpx;
+    line-height: 26rpx;
+    color: #333;
+}
+
+.history-options .item-btn-text {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #CD9B63;
+    width: 108rpx;
+    height: 48rpx;
+    border: 1px solid #CD9B63;
+    border-radius: 24rpx;
+    line-height: 48rpx;
+    margin-top: 36rpx;
+    text-align: center;
+}
+
+.hide {
+    display: none!important;
+}
+
+.list-reqerror-tip {
+    position: fixed;
+    top: -600rpx;
+    width: 100%;
+    color: #999;
+    font-size: 30rpx;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+}
+
+.list-reqerror-tip.page-error-show {
+    position: relative;
+    top: 150rpx;
+    opacity: 1;
+}
+
+.history-header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 120rpx;
+    top: 0;
+    z-index: 99;
+    background: #F9F9F9;
+}
+
+.history-header .header-item-btns {
+    position: relative;
+    width: 108rpx;
+    height: 48rpx;
+    border: 1px solid #CD9B63;
+    border-radius: 24rpx;
+    right: 32rpx;
+    text-align: center;
+}
+
+.header-item-btns .item-btn-text {
+    font-size: 30rpx;
+    color: #CD9B63;
+    line-height: 48rpx;
+    position: relative;
+}
+
+.voice-items-scrolview {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding-top: 125rpx;
+    box-sizing: border-box;
+    background: #F9F9F9;
+}
+
+.voice-item-list {
+    position: relative;
+    margin-top: -40rpx;
+}
+
+.voice-item {
+    position: relative;
+    display: flex;
+    height: 200rpx;
+    background: #FFFFFF;
+    margin: 40rpx;
+    box-shadow: 0 8rpx 16rpx 0 rgba(0,0,0,0.05);
+    border-radius: 20rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.voice-item-icon {
+    float: left;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+    margin-left: 40rpx;
+    background-image: linear-gradient(270deg,#EBB87E 0%,#CD9B63 100%);
+    text-align: center;
+}
+
+image.voice-item-icon {
+    background: transparent;
+}
+
+.confirm-update-name {
+    border: 1px solid #CD9B63;
+    border-radius: 24rpx;
+    height: 48rpx;
+    font-size: 28rpx;
+    width: 100rpx;
+    text-align: center;
+    color: #CD9B63;
+    line-height: 48rpx;
+    margin-right: 30rpx;
+}
+
+.cancel-update-name {
+    border: 1px solid #999;
+    color: #666;
+    margin-top: 20rpx;
+}
+
+.voice-item-icon-text {
+    position: relative;
+    font-size: 56rpx;
+    top: 20rpx;
+    color: #ffffff;
+}
+
+.voice-item-btn {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx;
+    padding: 0;
+    background: transparent;
+    z-index: 3;
+}
+
+button.voice-item-btn {
+    position: unset;
+    padding: 0;
+}
+
+.form-btn-wp {
+    position: relative;
+    padding: 0;
+    display: inline;
+    margin: 0;
+}
+
+.voice-item-delete-btn {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 30rpx;
+}
+
+.voice-item-btn.voice-item-loading-btn {
+    animation: mymove 1s infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes mymove {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes mymove {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.voice-item-left-part {
+    align-items: center;
+    width: 100%;
+}
+
+.voice-item-content {
+    margin-left: 200rpx;
+}
+
+.voice-item-content-title {
+    font-size: 36rpx;
+    color: #333333;
+    padding-bottom: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.voice-item-content-title-input {
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #333;
+    font-size: 36rpx;
+    background: #ebf7ff;
+}
+
+.voice-item-content-hint {
+    font-size: 24rpx;
+    color: #999;
+    padding-bottom: 10rpx;
+    width: 304rpx;
+}
+
+.voice-item-status-text {
+    padding-right: 30rpx;
+    font-size: 28rpx;
+    color: #FE6F2F;
+    letter-spacing: 0;
+    line-height: 28rpx;
+    text-align: center;
+}
+
+.voice-item-status-text .speed-up-btn {
+    height: 48rpx;
+    width: 100rpx;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 48rpx;
+    text-align: center;
+    margin-top: 6rpx;
+    background-image: linear-gradient(-180deg,#FFCD79 0%,#FB6148 100%);
+    border-radius: 24rpx;
+}
+
+.voice-item-status-text .speed-up-btn.disabled {
+    color: #fff;
+    width: 124rpx;
+    background-image: linear-gradient(-270deg,#CCCCCC 0%,#AAAAAA 100%);
+}
+
+.speed-up-share {
+    display: block;
+    font-size: 32rpx;
+    color: #333;
+    background: transparent;
+    border-radius: 6rpx;
+    text-align: center;
+    padding: 0 80rpx;
+    line-height: 86rpx;
+}
+
+.voice-item-status-text.upgrading {
+    font-size: 34rpx;
+    letter-spacing: 0;
+    width: 4em;
+}
+
+.voice-loading-item {
+    font-size: 24rpx;
+    width: 100%;
+    height: 80rpx;
+    color: #999;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.tip-content {
+    text-align: left;
+    padding: 62rpx 62rpx 62rpx 62rpx;
+}
+
+.tip-content.speed-tip-content {
+    padding: 30rpx 30rpx 40rpx;
+}
+
+.tip-content view {
+    font-size: 28rpx;
+}
+
+.speed-tip-content .tip+.tip {
+    margin-top: 20rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.loading-wp {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    overflow: visible;
+    z-index: 0;
+}
+
+.voice-item-btn.loading {
+    position: absolute;
+    z-index: 0;
+    width: 64rpx;
+    height: 64rpx;
+    top: 4rpx;
+    left: 4rpx;
+    animation: rotate 0.6s linear infinite;
+}
+
+.rename-btn {
+    padding: 2rpx 12rpx;
+    width: 82rpx;
+    height: 32rpx;
+    font-size: 20rpx;
+    color: #999999;
+    border-radius: 18rpx;
+    letter-spacing: 0;
+    background: #EEEEEE;
+    vertical-align: middle;
+}
+
+.speed-up-info {
+    position: absolute;
+    font-size: 24rpx;
+    color: #CE9C64;
+    letter-spacing: 0;
+    line-height: 26rpx;
+    text-align: center;
+}
+
+.has-speedup-info.voice-item {
+    height: 260rpx;
+}

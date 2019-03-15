@@ -1,0 +1,64 @@
+<view class="page-content">
+    <image src="http://s1.haitunvoice.com/liusheng-mini-app/images/index/V2/recording-wave-line.png?v=1" style="height:0;width:0;"></image>
+    <view class="record-sample-info fade {{finished?'fade-out':''}}">
+        <image class="record-sample-info-bg" src="/images/index/V2/record-ct-bg@2x-min.png"></image>
+        <view class="record-process-info">
+            <view class="current-process">{{completeItemLength+1}}</view>
+            <view class="process-status-info">第{{completeItemLength+1}}段/需录制{{recordSusNumber}}段</view>
+        </view>
+        <view class="record-sample-wrapper">
+            <text class="{{words.type==='INSERT'?'record-text-insert':''}} {{words.type==='DELETE'?'record-text-delete':''}}" wx:for="{{currentSampleWords}}" wx:for-index="wordIdx" wx:for-item="words">{{words.content}}</text>
+        </view>
+    </view>
+    <view class="record-btn-wrapper fade {{finished?'fade-out':''}}">
+        <view class="record-status-tip">
+            <block wx:if="{{recordStatus==0}}">点击开始录音,念出文字</block>
+            <block wx:elif="{{recordStatus==3}}">录音上传失败,请点击重新上传</block>
+            <view style="visibility:hidden;" wx:else>录音中...</view>
+        </view>
+        <view class="record-btn-bar">
+            <view class="recording-animation" hidden="{{recordStatus!==1}}">
+                <view class="recording-wave-line line1"></view>
+                <view class="recording-wave-line line2"></view>
+                <view class="recording-wave-line line3"></view>
+            </view>
+            <view bindtap="saveProgress" class="save-progress" hidden="{{!completeItemLength||completeItemLength<=0||recordStatus==1}}">
+                <image src="/images/icon/V2/icon-save@2x-min.png"></image>
+                <view>保存进度</view>
+            </view>
+            <view class="record-option">
+                <block wx:if="{{recordStatus==0}}">
+                    <form bindsubmit="startRecordSubmit" reportSubmit="true" wx:if="{{recordSusNumber-1===completeItemLength}}">
+                        <button class="record-btn start-record" formType="submit" hoverClass="t">
+                            <image bindtap="startRecord" class="start-record-btn-icon" src="/images/icon/V2/start-record@2x-min.png"></image>
+                        </button>
+                    </form>
+                    <block wx:else>
+                        <image bindtap="startRecord" class="record-btn start-record" src="/images/icon/V2/start-record@2x-min.png" wx:if="{{recordAuthed}}"></image>
+                        <button class="record-btn start-record" hoverClass="t" openType="openSetting" wx:elif="{{canIUseRecord}}">
+                            <image bindtap="startRecord" class="start-record-btn-icon" src="/images/icon/V2/start-record@2x-min.png"></image>
+                        </button>
+                        <image bindtap="startRecord" class="record-btn start-record" src="/images/icon/V2/start-record@2x-min.png" wx:else></image>
+                    </block>
+                </block>
+                <image bindtap="stopRecord" class="record-btn stop-record" src="/images/icon/V2/stop-record@2x-min.png" wx:elif="{{recordStatus==1}}"></image>
+                <image bindtap="startRecord" class="record-btn re-record" src="/images/icon/V2/re-record@2x-min.png" wx:elif="{{recordStatus==2}}"></image>
+                <image bindtap="reUploadMaterial" class="record-btn re-upload" src="/images/icon/V2/re-upload@2x-min.png" wx:elif="{{recordStatus==3}}"></image>
+                <image class="record-btn success-record" src="/images/icon/V2/start-record@2x-min.png" wx:elif="{{recordStatus==4}}"></image>
+            </view>
+            <view bindtap="jumpProgress" class="jump-progress" hidden="{{errorTime<=0||recordStatus==1}}">
+                <image src="/images/icon/V2/icon-jump@2x-min.png"></image>
+                <view>换一段</view>
+            </view>
+        </view>
+    </view>
+</view>
+<component-modal bindcancel="iknown" cancelBtnLabel="知道了" confirmBtnLabel="确定" hideConfirmBtn="true" id="howToRead" title="录制攻略">
+    <view class="vcn-select-cards">
+        <view class="tip-content">
+            <view class="tip">· 请保持在安静的环境中录制；</view>
+            <view class="tip">· 请距离手机两个拳头的距离朗读；</view>
+            <view class="tip">· 请按照文本朗读准确读音；</view>
+        </view>
+    </view>
+</component-modal>

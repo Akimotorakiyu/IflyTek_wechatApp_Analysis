@@ -1,0 +1,21 @@
+.guide-sub-title {
+    margin-top: 30rpx;
+}
+
+.guide-btn-wrapper {
+    margin-top: 65rpx;
+}
+
+.main-btn {
+    height: 100rpx;
+    width: 630rpx;
+    line-height: 100rpx;
+}
+
+.main-btn+.main-btn {
+    margin-top: 30rpx;
+}
+
+.ip-placeholder {
+    font-size: 26rpx;
+}

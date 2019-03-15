@@ -1,0 +1,96 @@
+<view class="page-content  {{hasUsr&&nextStriveTimeDisplay&&!hasAuthTime&&!hasUnCompleteTask&&!hasStriveTimes&&'zoom-small'}}">
+    <view class="page-custom page-index {{hightScreen?'high-screen':''}}">
+        <image class="index-topbar" src="/images/index/V2/index-topbar-bg@2x-min.png"></image>
+        <view bindtap="toProduct" class="proh5">
+    查看教程<image class="arrow-right" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+        </view>
+        <view class="make-number" wx:if="{{makeNumber}}">
+      已有{{makeNumber}}人留下了他们的声音
+    </view>
+        <view class="voice-banner-swiper">
+            <component-carousel bindcardshown="cardShown" bindcardtaped="tapCard" carousels="{{banners}}" playing="{{playing}}" playingSrc="{{playingSrc}}" zoomsmall="{{hasUsr&&nextStriveTimeDisplay&&!hasAuthTime&&!hasUnCompleteTask&&!hasStriveTimes}}"></component-carousel>
+        </view>
+        <view class="entry-btn-wrapper">
+            <view class="entry-btn-tip" style="visibility: {{hasUsr&&nextStriveTimeDisplay&&!hasAuthTime&&!hasUnCompleteTask&&!hasStriveTimes?'visiable':'hidden'}};">
+                <view wx:if="{{!reminded}}">{{' '}}
+          <block wx:if="{{hasUsr&&nextStriveTimeDisplay&&!hasAuthTime&&!hasUnCompleteTask&&!hasStriveTimes}}">
+            下场{{nextStriveTimeDisplay}}点整开抢, 
+            <form bindsubmit="remindSubmit" reportSubmit="true">
+                            <button class="remind-me link" formType="submit" hoverClass="t">提醒我</button>
+                        </form>
+                    </block>
+                </view>
+                <button class="remind-me" hoverClass="t" wx:else>提醒成功！名额开放前5分钟通过微信系统通知提醒，请留意</button>
+            </view>
+            <button bindgetuserinfo="gotUsrInfo" class="main-btn entry-btn has-timestip" hoverClass="t" openType="getUserInfo" type="plain" wx:if="{{!hasUsr}}">
+                <text class="label" wx:if="{{hasUnCompleteTask}}">继续复刻我的声音</text>
+                <text class="label" wx:else>去复刻我的声音</text>
+                <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+            </button>
+            <form bindsubmit="continueVoiceMake" reportSubmit="true" wx:elif="{{hasUnCompleteTask}}">
+                <button class="main-btn entry-btn has-timestip" formType="submit" hoverClass="t">
+                    <text class="label">继续复刻我的声音</text>
+                    <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+                </button>
+            </form>
+            <form bindsubmit="voiceMakeGuide" reportSubmit="true" wx:elif="{{hasAuthTime}}">
+                <button class="main-btn entry-btn has-timestip" formType="submit" hoverClass="t">
+                    <text class="label">去复刻我的声音</text>
+                    <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+                </button>
+            </form>
+            <form bindsubmit="striveLimitedTime" reportSubmit="true" wx:elif="{{hasStriveTimes}}">
+                <button class="main-btn entry-btn has-timestip" formType="submit" hoverClass="t">
+                    <text class="label">去复刻我的声音</text>
+                    <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+                </button>
+            </form>
+            <form bindsubmit="disableStrive" reportSubmit="true" wx:elif="{{!hasStriveTimes}}">
+                <button class="main-btn entry-btn has-timestip" formType="submit" hoverClass="t">
+                    <text class="label">本时段限量名额已抢完</text>
+                    <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+                </button>
+            </form>
+            <form bindsubmit="disableStrive" reportSubmit="true" wx:else>
+                <button class="main-btn entry-btn has-timestip" formType="submit" hoverClass="t">
+                    <text class="label">去复刻我的声音</text>
+                    <text class="time-tips">限量名额剩余：{{hasStriveTimes}}</text>
+                </button>
+            </form>
+            <view class="invitate-wrapper" id="invitateWrapper">
+                <view bindtap="bindInviteCode" class="entry-invitecode-btn" wx:if="{{hasUsr}}">输入邀请码
+          <image class="arrow-right" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+                </view>
+                <button bindgetuserinfo="gotUsrInfoBeforeCode" class="entry-invitecode-btn none-border" hoverClass="t" openType="getUserInfo" wx:elif="{{!hasUsr}}">输入邀请码
+          <image class="arrow-right" src="/images/icon/V2/arrow-right@2x-min.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>
+<component-credentials-modal bind:confirm="onConfirm" btnType="{{confirmBtnType}}" confirmBtnLabel="{{confirmBtnType=='1'?'确定':'保存到相册'}}" disabled="{{credentialsBtnDisabled}}" id="credentialsModal">
+    <canvas canvasId="credentialsCanvas" class="credentials-card-area"></canvas>
+</component-credentials-modal>
+<component-modal bindcancel="iknownUpload" cancelBtnLabel="知道了" confirmBtnLabel="确定" hideConfirmBtn="true" id="uploadTip" title="成功提示">
+    <view class="vcn-select-cards">
+        <view class="tip-content">
+            <view class="tip">录音已上传到声音复刻站，请稍后注意查看微信通知
+</view>
+        </view>
+    </view>
+</component-modal>
+<component-modal bindcancel="iknownRemind" cancelBtnLabel="知道了" hideConfirmBtn="true" id="remindTip" title="设置完成提醒">
+    <view class="tip-content">
+        <view class="tip">系统会在下个时段前下发服务通知</view>
+        <view class="tip">不要忘了哟！</view>
+    </view>
+</component-modal>
+<view bindtap="iKnowIndexGuide" class="page-guide-content page-guide-content-trans {{hightScreen?'high-screen':''}}" wx:if="{{showIndexGuide<3}}">
+    <image class="guide-tip-bg guide-userguide-tip" hidden="{{showIndexGuide!==0}}" index="0" src="/images/bg/4@2x-min.png"></image>
+    <image class="guide-tip-bg guide-startbtn-tip" hidden="{{showIndexGuide!==1}}" index="1" src="/images/bg/5@2x-min.png" style="margin-top:{{buttonTop?buttonTop+'px':false}};"></image>
+    <image class="guide-tip-bg guide-code-tip" hidden="{{showIndexGuide!==2}}" index="2" src="/images/bg/6@2x-min.png" style="margin-top:{{invitateWrapperTop?invitateWrapperTop+'px':false}};"></image>
+</view>
+<view class="page-guide-content" wx:if="{{hasUsr&&!hasAuthTime&&!hasUnCompleteTask&&!hasStriveTimes&&showIndexGuide>=3&&timesIndexTips<2}}">
+    <image bindtap="iKnowIndexTimesGuide" class="guide-calltip-bg" src="/images/bg/no-times-tip1.jpg" wx:if="{{timesIndexTips==0}}"></image>
+    <image bindtap="iKnowIndexTimesGuide" class="guide-calltip-bg" src="/images/bg/no-times-tip2.jpg" wx:elif="{{timesIndexTips==1}}"></image>
+</view>

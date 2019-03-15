@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "component-share-actsheet": "../../../../components/shareActSheet/index",
+        "component-share": "../../../../components/sharecard/sharecard"
+    },
+    "disableScroll": true
+}

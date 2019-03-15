@@ -1,0 +1,11 @@
+<view bindtouchmove="handletouchmove" bindtouchstart="handletouchtart" class="carousel-cards-warpper {{zoomsmall&&'zoom-small'}}" wx:if="{{carousels&&carousels.length>0}}">
+    <view animation="{{animation-( current%carousels.length==cardIdx?'carousel-card-active':'carousel-card-active-v'+(cardIdx==virtureIdx.v1?'1':cardIdx==virtureIdx.v2?'2':cardIdx==virtureIdx.vp2?'-2':cardIdx==virtureIdx.vp1?'-1':'hidden') )}}" capture-catch:tap="bindtapCard" class="carousel-card {{current%carousels.length==cardIdx?'carousel-card-active':'carousel-card-active-v'+(cardIdx==virtureIdx.v1?'1':cardIdx==virtureIdx.v2?'2':cardIdx==virtureIdx.vp2?'-2':cardIdx==virtureIdx.vp1?'-1':'hidden')}}" data-card-index="{{cardIdx}}" id="carousel_item_{{cardIdx}}" wx:for="{{carousels}}" wx:for-index="cardIdx" wx:for-item="card" wx:key="{{cardIdx}}">
+        <view class="card-container">
+            <image class="card-bg" src="{{card.image}}"></image>
+            <view class="play-control">
+                <image src="/images/icon/V2/icon-playing@2x.png" wx:if="{{playing&&playingSrc==card.audio}}"></image>
+                <image src="/images/icon/V2/icon-paused@2x.png" wx:else></image>
+            </view>
+        </view>
+    </view>
+</view>

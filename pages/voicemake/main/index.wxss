@@ -1,0 +1,263 @@
+.page-content {
+    padding: 60rpx 20rpx 0;
+    box-sizing: border-box;
+}
+
+.fade {
+    transition: all .8s;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.record-status-info {
+    padding: 40rpx 0 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.record-status-info .status-info {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #fff;
+}
+
+.status-info-bar {
+    height: 208rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.record-status-info .status-progress {
+    height: 168rpx;
+    width: 168rpx;
+    padding-top: 40rpx;
+    margin-left: 291rpx;
+}
+
+.progress-tip-wrapper {
+    position: relative;
+}
+
+.progress-tip-wrapper .outer-circle-bg {
+    position: absolute;
+    width: 168rpx;
+    height: 168rpx;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    background-image: url("http://s1.haitunvoice.com/liusheng-mini-app/images/record/progress-bg.png");
+    transition: all 1.2s ease 0s;
+}
+
+.progress-tip-wrapper .progress-info-tip {
+    font-size: 48rpx;
+    line-height: 168rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.progress-tip-wrapper .right-icon {
+    width: 88rpx;
+    height: 88rpx;
+    position: absolute;
+    top: 45rpx;
+    left: 40rpx;
+}
+
+.record-sample-info {
+    position: relative;
+    height: 820rpx;
+}
+
+.record-sample-info-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 820rpx;
+    width: 710rpx;
+}
+
+.record-process-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.current-process,.process-status-info {
+    font-size: 60rpx;
+    font-weight: 600;
+    line-height: 60rpx;
+    color: #CD9B63;
+    margin-top: 52rpx;
+    text-align: center;
+}
+
+.process-status-info {
+    font-size: 26rpx;
+    font-weight: normal;
+    margin-top: 42rpx;
+}
+
+.record-sample-wrapper {
+    position: absolute;
+    top: 240rpx;
+    left: 74rpx;
+    width: 562rpx;
+    max-height: 448rpx;
+    overflow-y: auto;
+    color: #333;
+    word-break: break-all;
+    text-align: justify;
+    font-size: 34rpx;
+    box-sizing: border-box;
+}
+
+.record-text-insert {
+    color: #EC2929;
+}
+
+.record-text-delete {
+    color: #EC2929;
+}
+
+.record-btn-wrapper {
+    margin-top: 20rpx;
+}
+
+.record-status-tip {
+    color: #CD9B63;
+    font-size: 30rpx;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.record-btn-bar {
+    margin-top: 30rpx;
+    height: 212rpx;
+    position: relative;
+}
+
+.save-progress,.jump-progress {
+    color: #CD9B63;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    float: left;
+    margin: 55rpx 0 0 60rpx;
+    width: 100rpx;
+    text-align: center;
+}
+
+.save-progress {
+    width: 120rpx;
+}
+
+.jump-progress {
+    float: right;
+    margin: 55rpx 70rpx 0 0;
+}
+
+.save-progress image,.jump-progress image {
+    width: 50rpx;
+    height: 50rpx;
+    margin-bottom: 24rpx;
+}
+
+.jump-progress image {
+    width: 64rpx;
+}
+
+.record-option {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    overflow: visible;
+    height: 212rpx;
+    display: inline-block;
+    z-index: 2;
+}
+
+.record-btn {
+    position: absolute;
+    left: 249rpx;
+    width: 212rpx;
+    height: 212rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 156rpx;
+    display: inline-block;
+    padding: 0;
+    z-index: 5;
+    background: transparent!important;
+}
+
+.record-btn .start-record-btn-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.tip-content {
+    text-align: justify;
+    padding-left: 80rpx;
+    margin: 60rpx 0;
+}
+
+.tip-content .tip+.tip {
+    margin-top: 10rpx;
+}
+
+.icon-number {
+    line-height: 168rpx;
+    width: 24rpx;
+    text-align: center;
+    display: inline-block;
+    height: 30rpx;
+}
+
+.icon-number-1 {
+    width: 12rpx;
+}
+
+.icon-number+.icon-number {
+    margin-left: 8rpx;
+}
+
+.recording-animation {
+    position: relative;
+    height: 0;
+    z-index: 1;
+    top: 10rpx;
+    width: 750rpx;
+    left: -20rpx;
+}
+
+.recording-wave-line {
+    width: 100%;
+    height: 40rpx;
+    position: absolute;
+    left: 0;
+    top: 66rpx;
+    background-image: url('http://s1.haitunvoice.com/liusheng-mini-app/images/index/V2/recording-wave-line.png?v=1');
+    background-size: 1500rpx 40rpx;
+    background-position: -187rpx bottom;
+    background-repeat: no-repeat;
+    animation: sploosh 1.6s linear both alternate infinite;
+}
+
+.recording-wave-line.line1 {
+    animation-delay: -0.8s;
+    opacity: .75;
+}
+
+.recording-wave-line.line2 {
+    animation-delay: -1.2s;
+    opacity: 0.38;
+}
+
+.recording-wave-line.line3 {
+    animation-delay: -1.8s;
+    opacity: 0.1;
+}

@@ -1,0 +1,91 @@
+.share-picture-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.share-scroll-auto {
+    position: relative;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.share-content-wrapper {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top: 30rpx;
+    left: 0;
+    padding: 0 0 30rpx;
+}
+
+.share-picture-part {
+    width: 650rpx;
+    height: 804rpx;
+    margin-left: 50rpx;
+}
+
+.canvas-hidden {
+    display: none!important;
+}
+
+.share-content-wrapper.content-covered {
+    overflow: hidden;
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    width: 690rpx;
+    margin-left: 30rpx;
+    transform: translateY(-50%);
+}
+
+.share-content-wrapper.content-covered .share-picture-part {
+    margin-left: 20rpx;
+}
+
+.share-content-wrapper.content-covered .share-footer {
+    margin-top: 72rpx;
+}
+
+.share-footer {
+    margin-top: 40rpx;
+}
+
+.share-btn-save {
+    height: 100rpx;
+    width: 590rpx;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 38rpx;
+    background-color: #EBB87E;
+    border-radius: 16rpx;
+}
+
+.share-footer-wp {
+    margin-top: 72rpx;
+}
+
+.share-footer-wp .share-btn-save {
+    height: 100rpx;
+    width: 590rpx;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 38rpx;
+    font-weight: normal;
+    font-family: PingFangSC-Semibold,sans-serif;
+    background: linear-gradient(270deg,#EBB87E 0%,#CD9B63 100%);
+    border-radius: 16rpx;
+}

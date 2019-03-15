@@ -1,0 +1,8 @@
+<view class="product-wp">
+    <image mode="widthFix" src="http://s1.haitunvoice.com/liusheng-mini-app/images/production/1-min.png?t=20180910"></image>
+    <image mode="widthFix" src="http://s1.haitunvoice.com/liusheng-mini-app/images/production/2-min.png?t=20180910"></image>
+    <image mode="widthFix" src="http://s1.haitunvoice.com/liusheng-mini-app/images/production/3-min.png?t=20180910"></image>
+    <image mode="widthFix" src="http://s1.haitunvoice.com/liusheng-mini-app/images/production/4-min.png?t=20180910"></image>
+    <image mode="widthFix" src="http://s1.haitunvoice.com/liusheng-mini-app/images/production/5-min.png?t=20180910"></image>
+    <image bindtap="goToHome" class="to-home" mode="widthFix" src="/images/application/h5-to-home.png"></image>
+</view>

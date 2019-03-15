@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "绑定手机号",
+    "disableScroll": true,
+    "usingComponents": {
+        "component-modal": "../../../components/modal/index"
+    }
+}

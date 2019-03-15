@@ -1,0 +1,98 @@
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0,.4);
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 110rpx;
+    background: transparent;
+    z-index: 100;
+}
+
+.mask view {
+    position: absolute;
+    background: rgba(0,0,0,.7);
+}
+
+.mask .top {
+    top: 0;
+    width: 100%;
+}
+
+.mask .left {
+    left: 0;
+}
+
+.mask .right {
+    right: 0;
+}
+
+.mask .bottom {
+    bottom: 0;
+    width: 100%;
+}
+
+.mask .cover-view {
+    border: 2px solid blue;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.img {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    background: transparent;
+    z-index: 102;
+}
+
+.image-origin {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+}
+
+.img image {
+    height: 400px;
+}
+
+.imgcrop {
+    position: absolute;
+    left: -50000rpx;
+    top: -500000rpx;
+}
+
+.footer {
+    position: absolute;
+    width: 750rpx;
+    height: 110rpx;
+    color: #fff;
+    background: #000;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 200;
+}
+
+.footer view {
+    width: 30%;
+    text-align: center;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}

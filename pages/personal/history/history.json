@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "朗读历史",
+    "disableScroll": true,
+    "usingComponents": {
+        "component-modal": "../../../components/modal/index"
+    }
+}
